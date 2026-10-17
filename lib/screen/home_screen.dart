@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Column(
+          crossAxisAlignment: .start,
           children: [
             Container(
               width: double.infinity,
@@ -49,6 +50,14 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 borderRadius: .circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withValues(alpha: 0.9),
+                    blurRadius: 5.0,
+                    spreadRadius: 2.0,
+                    offset: const Offset(4, 4),
+                  ),
+                ],
               ),
               child: Column(
                 crossAxisAlignment: .start,
@@ -88,28 +97,42 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 18),
             Row(
-              mainAxisAlignment: .center,
               children: [
-                ReusableCard(
-                  title: 'Income',
-                  amount: 'RM 5000.00',
-                  icon: CircleIcon(
-                    icon: Icons.arrow_upward,
-                    color: Colors.green,
+                Expanded(
+                  child: ReusableCard(
+                    title: 'Income',
+                    amount: 'RM 5000.00',
+                    icon: CircleIcon(
+                      icon: Icons.arrow_upward,
+                      color: Colors.green,
+                    ),
                   ),
                 ),
-                SizedBox(width: 3),
-                ReusableCard(
-                  title: 'Expenses',
-                  amount: 'RM 2000.00',
-                  icon: CircleIcon(
-                    icon: Icons.arrow_downward,
-                    color: Colors.red,
+                SizedBox(width: 12),
+                Expanded(
+                  child: ReusableCard(
+                    title: 'Expenses',
+                    amount: 'RM 2000.00',
+                    icon: CircleIcon(
+                      icon: Icons.arrow_downward,
+                      color: Colors.red,
+                    ),
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 18),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                'Recent Transaction',
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: .bold,
+                ),
+              ),
             ),
           ],
         ),

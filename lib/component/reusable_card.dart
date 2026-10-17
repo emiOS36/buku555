@@ -17,8 +17,11 @@ class ReusableCard extends StatelessWidget {
     final Size screenSize = MediaQuery.sizeOf(context);
 
     return Card(
+      margin: EdgeInsets.zero,
+      elevation: 7.0,
+      shadowColor: Colors.grey,
       child: SizedBox(
-        width: screenSize.width * 0.443,
+        width: double.infinity,
         height: screenSize.height * 0.09,
         child: Padding(
           padding: EdgeInsets.all(16),
@@ -26,9 +29,7 @@ class ReusableCard extends StatelessWidget {
             mainAxisAlignment: .center,
             children: [
               icon,
-              SizedBox(
-                width: 10,
-              ),
+              SizedBox(width: 10),
               Column(
                 crossAxisAlignment: .start,
                 children: [
