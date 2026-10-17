@@ -10,6 +10,6 @@ class AddTransactionScreen extends StatefulWidget {
 class _AddTransactionScreenState extends State<AddTransactionScreen> {
   @override
   Widget build(BuildContext context) {
-    return Text('Add');
+    return const Placeholder();
   }
 }
