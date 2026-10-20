@@ -1,5 +1,6 @@
-import 'package:buku_555_v2/component/circle_icon.dart';
-import 'package:buku_555_v2/component/reusable_card.dart';
+import 'package:buku_555_v2/widget/circle_icon.dart';
+import 'package:buku_555_v2/widget/reusable_card.dart';
+import 'package:buku_555_v2/widget/transaction_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -125,13 +126,64 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 18),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Text(
-                'Recent Transaction',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: .bold,
-                ),
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Row(
+                mainAxisAlignment: .spaceBetween,
+                children: [
+                  const Text(
+                    'Recent Transaction',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: .bold,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: .w500,
+                      color: Colors.blueGrey[700],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                children: const [
+                  TransactionTile(
+                    icon: Icons.restaurant,
+                    color: Colors.orange,
+                    title: 'Lunch',
+                    category: 'Food & Drinks',
+                    date: 'Today',
+                    amount: -15.00,
+                  ),
+                  TransactionTile(
+                    icon: Icons.shopping_cart_outlined,
+                    color: Colors.green,
+                    title: 'Groceries',
+                    category: 'Shopping',
+                    date: 'Yesterday',
+                    amount: -120.00,
+                  ),
+                  TransactionTile(
+                    icon: Icons.apartment,
+                    color: Colors.deepPurpleAccent,
+                    title: 'Salary',
+                    category: 'Income',
+                    date: '10 Oct 2026',
+                    amount: 3500.00,
+                  ),
+                  TransactionTile(
+                    icon: Icons.bolt,
+                    color: Colors.pinkAccent,
+                    title: 'Electricity Bill',
+                    category: 'Bills',
+                    date: '8 Oct 2026',
+                    amount: -100.00,
+                  ),
+                ],
               ),
             ),
           ],
